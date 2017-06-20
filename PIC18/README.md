@@ -25,12 +25,18 @@
 
 ## PERIPHERALS: Hardware limits
 
-+ Control registers (i.e. contains Protocols)
-+ Work registers (i.e. contains PROTOCOL+DATA-received/transmitted)
++ Control registers: Protocols
++ Work registers   : Protocols + DATA received/transmitted
+
+## GPIO: General purpose Input Output
+
++ #### LATx : WRITE TO REGISTER
++ #### PORTx: READ FROM REGISTER
++ #### TRISx: IO ENCODING REGISTER
 
 ## INTERRUPTIONS: (USING GLOBAL VARIABLES)
 
-+ ### IRQ: Interrupt Request (logique-de-demasquage: 1|0)
++ ### IRQ: Interrupt ReQuest
     + #### IF: Interrupt Flag
     + #### IE: Interrupt Enable
         + ##### GIE: Global Interrupt Enable
