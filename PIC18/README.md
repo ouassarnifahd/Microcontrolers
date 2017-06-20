@@ -17,9 +17,9 @@
      |       3.EXECUTE      |
      |      4.WRITE-BACK    |
      \----------------------/
-               /\
-         DATA  ||  16-bit
-               \/
+                /\
+          DATA  ||  16-bit
+                \/
      DATA MEMORY 4Kb (4096-bit)
     [BSR(0x0-0xF) / SFR(0x0|0xF)]
 
