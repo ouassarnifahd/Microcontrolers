@@ -41,15 +41,22 @@
     + #### IE: Interrupt Enable
         + ##### GIE: Global Interrupt Enable
     + #### IP: Interrupt Priority
+            void timer0_init(void) {
+                /* system - disable PIC16 legacy mode */
 
-            /* system - disable PIC16 legacy mode */
                 RCONbits.IPEN = 1;
-            /* timer0 - interrupt configuration – high priority vector */
+
+                /* timer0 - interrupt configuration – high priority vector */
+
                 INTCONbits.TMR0IF = 0;
                 INTCON2bits.TMR0IP = 1;
                 INTCONbits.TMR0IE = 1;
-            /* system - global interrupt enable */
+
+                /* system - global interrupt enable */
+
                 INTCONbits.GIEH=1;
+
+            }
 
 + ### Interruption Vectors:
         Memory-Addresses containing: goto ISR
@@ -58,23 +65,26 @@
         Save mainProgram -> ISR -> Restore mainProgram
 + ### ISR: Interrupt Service Routine (function|software)
 
-            /* ISR - high level Interrupt Service Routine */
-                void interrupt high_priority high_isr (void) {
-                    /* check for timer1 IRQ */
-                        if( INTCONbits.TMR0IF ) {
-                            /* IRQ acknowledgment */
-                                INTCONbits.TMR0IF = 0; /* ACK */
+        /* ISR - high level Interrupt Service Routine */
+        void interrupt high_priority high_isr (void) {
 
-                            /* user ISR processing */
-                        }
-                }
-            /* program entry point */
-                void main(void) {
-                    timer0_init();
-                    while(1) {
-                        /* user application scheduler */
-                    }
-                }
+            /* check for timer1 IRQ */
+            if( INTCONbits.TMR0IF ) {
+
+                /* IRQ acknowledgment */
+                INTCONbits.TMR0IF = 0; /* ACK */
+
+                /* user ISR processing */
+            }
+        }
+        /* program entry point */
+        void main(void) {
+            timer0_init();
+            while(1) {
+                /* user application scheduler */
+            }
+        }
+
 ## Others
 + FUNCTION CALL: PC, GOTO, RETURN
 + OFFLINE SCHEDULER:
