@@ -75,6 +75,6 @@
                         /* user application scheduler */
                     }
                 }
-+ ### Others
-    + FUNCTION CALL: PC, GOTO, RETURN
-    + OFFLINE SCHEDULER:
+## Others
++ FUNCTION CALL: PC, GOTO, RETURN
++ OFFLINE SCHEDULER:
