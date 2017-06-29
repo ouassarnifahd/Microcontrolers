@@ -1,4 +1,4 @@
-# PIC18 Family — 8bit Microchip Microcontrolers
+# PIC18 Family - 8-bit Microchip Microcontrolers
 
 ## Architecture: Harvard
     Read-Address-Bus:        21-bit -> 2M Addressable-Memory-Location (write only)
